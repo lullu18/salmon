@@ -37,3 +37,34 @@ function draw() {
   // 마우스를 따라다니는 연어 이모티콘
   drawCursorSalmon();
 }
+
+function drawRiverZones() {
+  // 상류(위)
+  noStroke();
+  fill(40, 90, 160, 200);
+  rect(0, 0, width, dividerY);
+
+  // 하류(아래)
+  fill(10, 60, 120, 0);
+  rect(0, dividerY, width, height - dividerY);
+
+  // 텍스트 라벨
+  noStroke();
+  fill(255);
+  textSize(30);
+  text("🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊", 400, 300);
+}
+
+function drawCursorSalmon() {
+  // 마우스 따라다니는 연어
+  noStroke();
+  textSize(32);
+  text("🐟", mouseX, mouseY);
+}
+
+function mousePressed() {
+  // 하류(아래쪽)에서 클릭했을 때만 연어 생성
+  if (mouseY > dividerY) {
+    salmons.push(new Salmon(mouseX, mouseY));
+  }
+}
