@@ -41,11 +41,11 @@ function draw() {
 function drawRiverZones() {
   // 상류(위)
   noStroke();
-  fill(40, 90, 160, 200);
+  fill(40, 90, 160);
   rect(0, 0, width, dividerY);
 
   // 하류(아래)
-  fill(10, 60, 120, 0);
+  fill(10, 60, 120);
   rect(0, dividerY, width, height - dividerY);
 
   // 텍스트 라벨

@@ -10,7 +10,7 @@ class Salmon extends Mover {
     update() {
         if(!this.exploded){
             let upGravity = createVector(0, -0.15); 
-            this this.applyForce(upGravity);
+            this.applyForce(upGravity);
 
             super.update();
 
