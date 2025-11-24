@@ -1,7 +1,8 @@
 // Particle class
 class Particle {
   constructor(position) {
-    this.pos = position.copy();
+    super(position.x, position.y);
+
     this.vel = p5.Vector.random2D();
     this.vel.mult(random(1, 3));
     this.acc = createVector(0, 0);

@@ -1,17 +1,18 @@
 // Salmon class
-class Salmon {
+class Salmon extends Mover {
     constructor(x, y) {
-        this.pos = createVector(x, y);
+        super(x, y);
         this.vel = createVector(random(-1, 1), random(-1, -3));
-        this.acc = createVector(0, -0.15); // 중력이 위로 작용
         this.exploded = false;
         this.finished = false;
     }
 
     update() {
         if(!this.exploded){
-            this.vel.add(this.acc);
-            this.pos.add(this.vel);
+            let upGravity = createVector(0, -0.15); 
+            this this.applyForce(upGravity);
+
+            super.update();
 
             if (this.pos.y < dividerY / 2 - 20) {
                 this.explode();
