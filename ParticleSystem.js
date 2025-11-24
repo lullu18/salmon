@@ -10,14 +10,10 @@ class ParticleSystem {
     }
 
     run() {
-        for (let i = this.particles.length - 1; i >= 0; i--) {
+        for (let i = 0; i < this.particles.length; i++) {
             let p = this.particles[i];
             p.update();
             p.show();
-
-            if (p.isDead()) {
-                this.particles.splice(i, 1);
-            }
         }
     }
 
